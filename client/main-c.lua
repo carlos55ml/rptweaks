@@ -29,7 +29,7 @@ function onStartup()
     end
 
     if Config.NoHeadshots then 
-        SetPedSuffersCriticalHits(GetPlayerPed(-1), 0)
+        SetPedSuffersCriticalHits(GetPlayerPed(-1), false)
     end
 
 end

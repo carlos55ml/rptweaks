@@ -13,4 +13,4 @@ Multiple tweaks for a better RP world! - Made for FiveM unde GNU GENERAL PUBLIC 
 
 ## VERSION:
 
-Script is currently in version **1.0** , more functions to come!
+Script is currently in version **1.1** , more functions to come!
