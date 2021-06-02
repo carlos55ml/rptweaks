@@ -63,7 +63,7 @@ end)
 Citizen.CreateThread(function()
     if Config.Populate then
         while true do 
-            Citizen.Wait(10 * 1000)
+            Citizen.Wait(20 * 1000)
             PopulateNow()
         end
     end
