@@ -10,6 +10,7 @@ Multiple tweaks for a better RP world! - Made for FiveM unde GNU GENERAL PUBLIC 
 * Enable or disable trains!
 * Enable or disable Random NPC cops, aswell as the distant sirens sound.
 * Disable or enable auto health regeneration.
+* Disable or enable Headshots kills with only 1 shot.
 
 ## VERSION:
 
