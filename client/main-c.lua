@@ -87,7 +87,6 @@ Citizen.CreateThread(function()
     end
 end)
 
-
 Citizen.CreateThread(function()
     Wait(50)
     if Config.ShowPlayerID then
@@ -115,7 +114,6 @@ end
 -- the following values must satisfy the condtions (let x be the frequency) 
 -- x ≥ 0.0
 -- x must be a float type
-
 
 Citizen.CreateThread(function()
     while true do
