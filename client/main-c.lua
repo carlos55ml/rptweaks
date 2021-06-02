@@ -1,31 +1,30 @@
 function onStartup()
     if Config.NoAutoHealthRegen then
-    SetPlayerHealthRechargeLimit(PlayerId(), 0)
+        SetPlayerHealthRechargeLimit(PlayerId(), 0)
     end
 
-
     if Config.Trains then
-    SwitchTrainTrack(0, true)  -- enable trains 
-    SwitchTrainTrack(3, true)   
-    SetRandomTrains(1)
+        SwitchTrainTrack(0, true)  -- enable trains 
+        SwitchTrainTrack(3, true)   
+        SetRandomTrains(1)
     end
 
 
     if Config.NoGangsAttack then
-    -- no agresive gangs
-    SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_HILLBILLY"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_BALLAS"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_MEXICAN"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_FAMILY"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_MARABUNTE"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_SALVA"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("GANG_1"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("GANG_2"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("GANG_9"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("GANG_10"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("FIREMAN"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("MEDIC"), GetHashKey('PLAYER'))
-    SetRelationshipBetweenGroups(1, GetHashKey("COP"), GetHashKey('PLAYER'))
+        -- no agresive gangs
+        SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_HILLBILLY"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_BALLAS"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_MEXICAN"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_FAMILY"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_MARABUNTE"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("AMBIENT_GANG_SALVA"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("GANG_1"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("GANG_2"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("GANG_9"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("GANG_10"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("FIREMAN"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("MEDIC"), GetHashKey('PLAYER'))
+        SetRelationshipBetweenGroups(1, GetHashKey("COP"), GetHashKey('PLAYER'))
     end
 
     if Config.NoHeadshots then 
@@ -44,13 +43,13 @@ Citizen.CreateThread(function()
     while true do 
         Citizen.Wait(1)
         if Config.NoAutoHealthRegen then
-        SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0) -- disable auto health regen
+            SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0) -- disable auto health regen
         end
 
         if Config.NoRandomNPCCops then
-        SetCreateRandomCops(0) -- disable random cops and effects
-        CancelCurrentPoliceReport()
-        DistantCopCarSirens(false)
+            SetCreateRandomCops(0) -- disable random cops and effects
+            CancelCurrentPoliceReport()
+            DistantCopCarSirens(false)
         end
 
         if Config.SameHealthForMaleAndFemalesPeds then
@@ -59,8 +58,9 @@ Citizen.CreateThread(function()
                 SetEntityHealth(GetPlayerPed(-1), 200)
             end
         end
+
         if Config.HideWeaponStats then
-        HideHudComponentThisFrame(20)
+            HideHudComponentThisFrame(20)
         end
      end
 end)
@@ -78,7 +78,7 @@ Citizen.CreateThread(function()
     if Config.NoPlaneTurbulence then
         while true do
             Citizen.Wait(30 * 1000)
-        local plane = GetVehiclePedIsIn(PlayerPedId(), false)
+            local plane = GetVehiclePedIsIn(PlayerPedId(), false)
             if IsThisModelAPlane(GetEntityModel(plane)) then
                 -- Goodbye turbulence!
                 SetPlaneTurbulenceMultiplier(plane, 0.0)
@@ -86,7 +86,6 @@ Citizen.CreateThread(function()
         end
     end
 end)
-
 
 Citizen.CreateThread(function()
     Wait(50)
@@ -115,7 +114,6 @@ end
 -- the following values must satisfy the condtions (let x be the frequency) 
 -- x ≥ 0.0
 -- x must be a float type
-
 
 Citizen.CreateThread(function()
     while true do

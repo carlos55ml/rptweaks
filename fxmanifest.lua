@@ -1,4 +1,4 @@
-fx_version 'adamant'
+fx_version 'bodacious'
 
 game 'gta5'
 
@@ -11,6 +11,6 @@ author 'carlos55ml'
 name 'rptweaks'
 
 client_scripts{
-    'client/*',
-    'config.lua'
+    'config.lua',
+    'client/*'
 } 
