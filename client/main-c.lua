@@ -27,6 +27,11 @@ function onStartup()
     SetRelationshipBetweenGroups(1, GetHashKey("MEDIC"), GetHashKey('PLAYER'))
     SetRelationshipBetweenGroups(1, GetHashKey("COP"), GetHashKey('PLAYER'))
     end
+
+    if Config.NoHeadshots then 
+        SetPedSuffersCriticalHits(GetPlayerPed(-1), 0)
+    end
+
 end
 
 AddEventHandler("playerSpawned", function()

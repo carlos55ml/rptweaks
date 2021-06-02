@@ -5,6 +5,8 @@ Config.TrafficFrequency = 1.0 -- For example: 0.4 is valid but 1.6 or 5.0 is NOT
 
 Config.NoGangsAttack = true -- prevent gangs from attacking you.
 
+Config.NoHeadshots = true -- prevents 1 shot headshot kill players.
+
 Config.Populate = true -- Spawn NPCS and cars near players to prevent a ghost city. Only works when Config.PedDensity and Config.Traffic.Density > 0.0
 
 Config.NoRandomNPCCops = true -- prevent NPC Police peds and car from spawning. Also prevents distant sirens sound from playing.
