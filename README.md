@@ -12,6 +12,12 @@ Multiple tweaks for a better RP world! - Made for FiveM unde GNU GENERAL PUBLIC 
 * Disable or enable auto health regeneration.
 * Disable or enable Headshots kills with only 1 shot.
 
+## INSTALLATION:
+
+* Download the ZIP or clone the repository in your resources folder.
+* add `ensure rptweaks` in your server.cfg
+* you're done!
+
 ## VERSION:
 
 Script is currently in version **1.1** , more functions to come!
