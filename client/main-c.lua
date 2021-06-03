@@ -45,10 +45,13 @@ Citizen.CreateThread(function()
             SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0) -- disable auto health regen
         end
 
-        if Config.NoRandomNPCCops then
+        if Config.NoRandomDispatch then
             SetCreateRandomCops(0) -- disable random cops and effects
             CancelCurrentPoliceReport()
             DistantCopCarSirens(false)
+            for i = 1, 16 do
+                EnableDispatchService(i, false)
+            end
         end
 
         if Config.SameHealthForMaleAndFemalesPeds then

@@ -13,7 +13,7 @@ Config.NoHeadshots = true -- prevents 1 shot headshot kill players.
 
 Config.Populate = true -- Spawn NPCS and cars near players to prevent a ghost city. Only works when Config.PedDensity and Config.Traffic.Density > 0.0
 
-Config.NoRandomNPCCops = true -- prevent NPC Police peds and car from spawning. Also prevents distant sirens sound from playing.
+Config.NoRandomDispatch = true -- prevent NPC Police, ambulance, Firefighters and so from spawning. Also prevents distant sirens sound from playing.
 
 Config.DisableVehicleRewards = true -- Prevent getting items when riding a vehicle. For example, getting new gun when entering a police car.
 
