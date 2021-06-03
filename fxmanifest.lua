@@ -4,7 +4,7 @@ game 'gta5'
 
 description 'Multiple tweaks for a better RP world! - Made for FiveM under GNU GENERAL PUBLIC LICENSE'
 
-version '1.1'
+version '2.0'
 
 author 'carlos55ml'
 
