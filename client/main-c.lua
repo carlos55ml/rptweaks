@@ -142,21 +142,3 @@ function miid(x,y ,width,height,scale, text, r,g,b,a, outline)
     AddTextComponentString(text)
     DrawText(x - width/2, y - height/2 + 0.005)
 end
-
--- the following values must satisfy the condtions (let x be the frequency) 
--- x ≥ 0.0
--- x must be a float type
-
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(1)
- -- https://runtime.fivem.net/doc/natives/#_0x245A6883D966D537
-        --[[ 
-        Use this native inside a looped function.
-        Values:
-        0.0 = no vehicles on streets
-        1.0 = normal vehicles on streets
-        0.0 ≤ x ≤ 1.0
-        ]]
-    end 
-end)
