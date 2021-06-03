@@ -8,7 +8,7 @@ Multiple tweaks for a better RP world! - Made for FiveM under GNU GENERAL PUBLIC
 * Disable or enable turbulences in planes.
 * Making Male and Female ped have the same health (200 in gta code, 100 in game).
 * Enable or disable trains!
-* Enable or disable Random NPC cops, aswell as the distant sirens sound.
+* Enable or disable Random NPC cops, medics and firefighters, aswell as the distant sirens sound.
 * Disable or enable auto health regeneration.
 * Disable or enable Headshots kills with only 1 shot.
 * Player ragdoll when getting shot.

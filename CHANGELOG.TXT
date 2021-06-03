@@ -4,3 +4,4 @@
 - disable vehicle reward also remove peds dropping weapons.
 - added ragdoll when shot.
 - added keep engine on.
+- added noRandomDispatch
