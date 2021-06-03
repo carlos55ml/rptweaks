@@ -142,3 +142,63 @@ function miid(x,y ,width,height,scale, text, r,g,b,a, outline)
     AddTextComponentString(text)
     DrawText(x - width/2, y - height/2 + 0.005)
 end
+
+local sh = GetEntityHealth(ply)
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+        if Config.RagdollWhenShot then 
+            local ply = GetPlayerPed(-1)
+                if HasEntityBeenDamagedByAnyPed(ply) then
+                        dam = sh - GetEntityHealth(ply)
+                        if (dam > 0) and (GetPedArmour(ply) <= 25) then
+                            if (dam >= 0) and (dam <= 5) then
+                                --print("hurt1")
+                                hurtMedium(ply, dam)
+                            elseif (dam >= 6) and (dam <= 10) then
+                                --print("hurt2")
+                                hurtMediumBad(ply, dam)
+                            elseif (dam >= 11) and (dam <= 16) then
+                                --print("hurt3")  
+                                hurtPainful(ply, dam)
+                            elseif dam >= 17 then
+                                --print("hurt4")
+                                hurtPainful(ply, dam)
+                            end
+                        end
+                        
+                        sh = GetEntityHealth(ply)
+                end
+                ClearEntityLastDamageEntity(ply)
+        end
+	 end
+end)
+
+
+
+function hurtMedium(ped, r)
+    if IsEntityDead(ped) then return false end
+    SetPedToRagdoll(GetPlayerPed(-1), 1000, 1000, 0, 0, 0, 0)
+    --print(r)
+end
+function hurtMediumBad(ped, r)
+    if IsEntityDead(ped) then return false end
+    SetPedToRagdoll(GetPlayerPed(-1), 1200, 1200, 0, 0, 0, 0)
+    --Citizen.SetTimeout( 4000, function() SetPedIsDrunk(ped, true) end)
+    --Citizen.SetTimeout( 30000, function() SetPedIsDrunk(ped, false) end)
+    --print(r)
+end
+function hurtBad(ped, r)
+    if IsEntityDead(ped) then return false end
+    SetPedToRagdoll(GetPlayerPed(-1), 1500, 1500, 0, 0, 0, 0)
+    --Citizen.SetTimeout( 5000, function() SetPedIsDrunk(ped, true) end)
+    --Citizen.SetTimeout( 120000, function() SetPedIsDrunk(ped, false) end)
+    --print(r)
+end
+function hurtPainful(ped, r)
+    if IsEntityDead(ped) then return false end
+    SetPedToRagdoll(GetPlayerPed(-1), 2000, 2000, 0, 0, 0, 0)
+    --Citizen.SetTimeout( 15000, function() SetPedIsDrunk(ped, true) end)
+    --Citizen.SetTimeout( 120000, function() SetPedIsDrunk(ped, false) end)
+    --print(r)
+end
