@@ -1,0 +1,4 @@
+03/06 added disable vehicle rewards
+- added hide hud elements
+- disable vehicle reward also remove peds dropping weapons.
+

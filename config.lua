@@ -21,8 +21,6 @@ Config.SameHealthForMaleAndFemalesPeds = true -- sets both male and female healt
 
 Config.NoAutoHealthRegen = true -- disable auto health regen
 
-Config.HideWeaponStats = true -- disable weapon stats in weapon wheel.
-
 Config.ShowPlayerID = true -- Shows player ID on screen.
 Config.PlayerID = { -- only works when "Config.ShowPlayerId = true"
     LocationX = 1.442,
@@ -30,4 +28,11 @@ Config.PlayerID = { -- only works when "Config.ShowPlayerId = true"
     Width = 1.0,
     Height = 0.9,
     Scale = 0.40,
+}
+
+Config.HideHUD = {
+    Reticle = true,     -- hide reticle when aiming.
+    WeaponStats = true, -- hide weapon stats when selecting gun.
+    CarName = true,     -- hide car name and class in the bottom right corner. regular HUD scripts should do this as well.
+    StreetName = true,  -- hide street name and area in the bottom right corner. Regular HUD scripts should do this as well.
 }

@@ -30,11 +30,6 @@ function onStartup()
     if Config.NoHeadshots then 
         SetPedSuffersCriticalHits(GetPlayerPed(-1), false)
     end
-
-    if Config.DisableVehicleRewards then 
-        DisablePlayerVehicleRewards(GetPlayerName(-1))
-    end
-
 end
 
 AddEventHandler("playerSpawned", function()
@@ -63,10 +58,17 @@ Citizen.CreateThread(function()
             end
         end
 
-        if Config.HideWeaponStats then
+        if Config.HideHUD.WeaponStats then
             HideHudComponentThisFrame(20)
+        else if Config.HideHUD.Reticle then
+            HideHudComponentThisFrame(14)
+        else if Config.HideHUD.CarName then
+            HideHudComponentThisFrame(6)
+            HideHudComponentThisFrame(8)
+        else if Config.HideHUD.StreetName then
+            HideHudComponentThisFrame(7)
+            HideHudComponentThisFrame(9)
         end
-     end
 end)
 
 Citizen.CreateThread(function()
@@ -87,6 +89,24 @@ Citizen.CreateThread(function()
                 -- Goodbye turbulence!
                 SetPlaneTurbulenceMultiplier(plane, 0.0)
             end
+        end
+    end
+end)
+
+
+Citizen.CreateThread(function()
+    if Config.DisableVehicleRewards then
+        while true do
+            Citizen.Wait(50)
+            local id = PlayerId()
+            
+            DisablePlayerVehicleRewards(id)
+            
+            RemoveAllPickupsOfType(‘PICKUP_WEAPON_CARBINERIFLE’)
+            RemoveAllPickupsOfType(‘PICKUP_WEAPON_PISTOL’)
+            RemoveAllPickupsOfType(‘PICKUP_WEAPON_PUMPSHOTGUN’)
+            RemoveAllPickupsOfType(‘PICKUP_WEAPON_COMBATPDW’)
+            RemoveAllPickupsOfType(‘PICKUP_WEAPON_COMBATPISTOL’)
         end
     end
 end)
