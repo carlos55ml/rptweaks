@@ -5,3 +5,5 @@
 - added ragdoll when shot.
 - added keep engine on.
 - added noRandomDispatch
+- added keep flashlight on
+- added individual damage multiplier for guns

@@ -13,7 +13,9 @@ Multiple tweaks for a better RP world! - Made for FiveM under GNU GENERAL PUBLIC
 * Disable or enable Headshots kills with only 1 shot.
 * Player ragdoll when getting shot.
 * Hide some HUD elements.
-* Keep engine on if player dont manually turn it off. (Engine control is NOT included)
+* Keep engine on if player dont manually turn it off. (Engine control is NOT included... yet.)
+* Individual damage multiplier for the most common guns.
+* Option to keep flashlight on when NOT aiming.
 
 ## INSTALLATION:
 
