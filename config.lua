@@ -15,6 +15,8 @@ Config.Populate = true -- Spawn NPCS and cars near players to prevent a ghost ci
 
 Config.NoRandomDispatch = true -- prevent NPC Police, ambulance, Firefighters and so from spawning. Also prevents distant sirens sound from playing.
 
+Config.FlashlightOnWhenMoving = true -- allow the gun flashlights to stay on while moving. They normally are on only while aiming
+
 Config.DisableVehicleRewards = true -- Prevent getting items when riding a vehicle. For example, getting new gun when entering a police car.
 
 Config.Trains = true -- Freight Train and metro travelling around the city.
@@ -39,4 +41,67 @@ Config.HideHUD = {
     WeaponStats = true, -- hide weapon stats when selecting gun.
     CarName = true,     -- hide car name and class in the bottom right corner. regular HUD scripts should do this as well.
     StreetName = true,  -- hide street name and area in the bottom right corner. Regular HUD scripts should do this as well.
+}
+
+Config.AlterWeaponDamage = true
+Config.WpDmgMult = {        -- Individual damage multiplier for the most used weapons. Only works when "Config.AlterWeaponDamage = true"
+    dagger          = 1.0,
+    bat             = 1.0,
+    bottle          = 1.0,
+    crowbar         = 1.0,
+    unarmed         = 1.0,
+    flashlight      = 1.0,
+    golfclub        = 1.0,
+    hammer          = 1.0,
+    hatchet         = 1.0,
+    knuckle         = 1.0,
+    knife           = 1.0,
+    machete         = 1.0,
+    switchblade     = 1.0,
+    nightstick      = 1.0,
+    wrench          = 1.0,
+    battleaxe       = 1.0,
+    poolcue         = 1.0,
+    stonehatchet    = 1.0,
+
+    pistol          = 1.0,
+    combatpistol    = 1.0,
+    appistol        = 1.0,
+    pistol50        = 1.0,
+    snspistol       = 1.0,
+    heavypistol     = 1.0,
+    vintagepistol   = 1.0,
+    revolver        = 1.0,
+    doubleaction    = 1.0,
+    ceramicpistol   = 1.0,
+    navyrevolver    = 1.0,
+
+    microsmg        = 1.0,
+    smg             = 1.0,
+    assaultsmg      = 1.0,
+    combatpdw       = 1.0,
+    machinepistol   = 1.0,
+    minismg         = 1.0,
+
+    pumpshotgun     = 1.0,
+    sawnoffshotgun  = 1.0,
+    assaultshotgun  = 1.0,
+    bullpupshotgun  = 1.0,
+    musket          = 1.0,
+    heavyshotgun    = 1.0,
+    dbshotgun       = 1.0,
+    autoshotgun     = 1.0,
+
+    assaultrifle    = 1.0,
+    carbinerifle    = 1.0,
+    advancedrifle   = 1.0,
+    specialcarbine  = 1.0,
+    bullpuprifle    = 1.0,
+    compactrifle    = 1.0,
+
+    gusenberg       = 1.0,
+
+    sniperrifle     = 1.0,
+    heavysniper     = 1.0,
+    marksmanrifle   = 1.0,
 }
