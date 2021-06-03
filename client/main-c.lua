@@ -31,6 +31,10 @@ function onStartup()
         SetPedSuffersCriticalHits(GetPlayerPed(-1), false)
     end
 
+    if Config.DisableVehicleRewards then 
+        DisablePlayerVehicleRewards(GetPlayerName(-1))
+    end
+
 end
 
 AddEventHandler("playerSpawned", function()

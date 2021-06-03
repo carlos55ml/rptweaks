@@ -11,6 +11,8 @@ Config.Populate = true -- Spawn NPCS and cars near players to prevent a ghost ci
 
 Config.NoRandomNPCCops = true -- prevent NPC Police peds and car from spawning. Also prevents distant sirens sound from playing.
 
+Config.DisableVehicleRewards = true -- Prevent getting items when riding a vehicle. For example, getting new gun when entering a police car.
+
 Config.Trains = true -- Freight Train and metro travelling around the city.
 
 Config.NoPlaneTurbulence = true -- prevents plane turbulences while flying.
