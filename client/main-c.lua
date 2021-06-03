@@ -58,17 +58,43 @@ Citizen.CreateThread(function()
             end
         end
 
+        if Config.DisableVehicleRewards then
+            while true do
+                Citizen.Wait(50)
+                local id = PlayerId()
+                
+                DisablePlayerVehicleRewards(id)
+                
+                RemoveAllPickupsOfType(‘PICKUP_WEAPON_CARBINERIFLE’)
+                RemoveAllPickupsOfType(‘PICKUP_WEAPON_PISTOL’)
+                RemoveAllPickupsOfType(‘PICKUP_WEAPON_PUMPSHOTGUN’)
+                RemoveAllPickupsOfType(‘PICKUP_WEAPON_COMBATPDW’)
+                RemoveAllPickupsOfType(‘PICKUP_WEAPON_COMBATPISTOL’)
+            end
+        end
+
+        SetPedDensityMultiplierThisFrame(Config.PedFrequency)
+        SetScenarioPedDensityMultiplierThisFrame(Config.PedFrequency, Config.PedFrequency)
+        -------------------------------
+        SetRandomVehicleDensityMultiplierThisFrame(Config.TrafficFrequency)
+        SetParkedVehicleDensityMultiplierThisFrame(Config.TrafficFrequency)
+        SetVehicleDensityMultiplierThisFrame(Config.TrafficFrequency)
+
         if Config.HideHUD.WeaponStats then
             HideHudComponentThisFrame(20)
-        else if Config.HideHUD.Reticle then
+        end
+        if Config.HideHUD.Reticle then
             HideHudComponentThisFrame(14)
-        else if Config.HideHUD.CarName then
+        end
+        if Config.HideHUD.CarName then
             HideHudComponentThisFrame(6)
             HideHudComponentThisFrame(8)
-        else if Config.HideHUD.StreetName then
+        end
+        if Config.HideHUD.StreetName then
             HideHudComponentThisFrame(7)
             HideHudComponentThisFrame(9)
         end
+    end
 end)
 
 Citizen.CreateThread(function()
@@ -89,24 +115,6 @@ Citizen.CreateThread(function()
                 -- Goodbye turbulence!
                 SetPlaneTurbulenceMultiplier(plane, 0.0)
             end
-        end
-    end
-end)
-
-
-Citizen.CreateThread(function()
-    if Config.DisableVehicleRewards then
-        while true do
-            Citizen.Wait(50)
-            local id = PlayerId()
-            
-            DisablePlayerVehicleRewards(id)
-            
-            RemoveAllPickupsOfType(‘PICKUP_WEAPON_CARBINERIFLE’)
-            RemoveAllPickupsOfType(‘PICKUP_WEAPON_PISTOL’)
-            RemoveAllPickupsOfType(‘PICKUP_WEAPON_PUMPSHOTGUN’)
-            RemoveAllPickupsOfType(‘PICKUP_WEAPON_COMBATPDW’)
-            RemoveAllPickupsOfType(‘PICKUP_WEAPON_COMBATPISTOL’)
         end
     end
 end)
@@ -142,17 +150,7 @@ end
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
-        SetPedDensityMultiplierThisFrame(Config.PedFrequency) -- https://runtime.fivem.net/doc/natives/#_0x95E3D6257B166CF2
-        --[[ 
-        Values:  
-        → 0.0 = no peds on streets  
-        → 1.0 = normal peds on streets   
-        ]]
-        SetScenarioPedDensityMultiplierThisFrame(Config.PedFrequency, Config.PedFrequency) -- https://runtime.fivem.net/doc/natives/#_0x7A556143A1C03898
-        -------------------------------
-        SetRandomVehicleDensityMultiplierThisFrame(Config.TrafficFrequency) -- https://runtime.fivem.net/doc/natives/#_0xB3B3359379FE77D3
-        SetParkedVehicleDensityMultiplierThisFrame(Config.TrafficFrequency) -- https://runtime.fivem.net/doc/natives/#_0xEAE6DCC7EEE3DB1D
-        SetVehicleDensityMultiplierThisFrame(Config.TrafficFrequency) -- https://runtime.fivem.net/doc/natives/#_0x245A6883D966D537
+ -- https://runtime.fivem.net/doc/natives/#_0x245A6883D966D537
         --[[ 
         Use this native inside a looped function.
         Values:
