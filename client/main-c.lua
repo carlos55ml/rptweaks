@@ -73,6 +73,19 @@ Citizen.CreateThread(function()
             end
         end
 
+        if Config.KeepEngineOn then
+            local playerPed = GetPlayerPed(-1)
+            local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+            local isRunning = GetIsVehicleEngineRunning(vehicle)
+            if IsPedInAnyVehicle(playerPed, false) and IsControlPressed(2, 75) and not IsEntityDead(playerPed) and isRunning == true then
+                    SetVehicleEngineOn(vehicle, true, true, false)
+                    TaskLeaveVehicle(playerPed, vehicle, 0)
+                    Citizen.Wait(150)
+                end
+            end
+        end
+        
+
         SetPedDensityMultiplierThisFrame(Config.PedFrequency)
         SetScenarioPedDensityMultiplierThisFrame(Config.PedFrequency, Config.PedFrequency)
         -------------------------------
