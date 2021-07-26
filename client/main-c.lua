@@ -61,9 +61,6 @@ Citizen.CreateThread(function()
             end
         end
 
-<<<<<<< Updated upstream
-        if Config.HideWeaponStats then
-=======
         if Config.DisableVehicleRewards then
             local id = PlayerId()
             
@@ -95,7 +92,6 @@ Citizen.CreateThread(function()
         SetVehicleDensityMultiplierThisFrame(Config.TrafficFrequency)
 
         if Config.HideHUD.WeaponStats then
->>>>>>> Stashed changes
             HideHudComponentThisFrame(20)
         end
      end

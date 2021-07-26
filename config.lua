@@ -28,8 +28,6 @@ Config.PlayerID = { -- only works when "Config.ShowPlayerId = true"
     Width = 1.0,
     Height = 0.9,
     Scale = 0.40,
-<<<<<<< Updated upstream
-=======
 }
 
 Config.HideHUD = {
@@ -100,5 +98,4 @@ Config.WpDmgMult = {        -- Individual damage multiplier for the most used we
     sniperrifle     = 1.0,
     heavysniper     = 1.0,
     marksmanrifle   = 1.0,
->>>>>>> Stashed changes
 }
