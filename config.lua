@@ -5,11 +5,19 @@ Config.TrafficFrequency = 1.0 -- For example: 0.4 is valid but 1.6 or 5.0 is NOT
 
 Config.NoGangsAttack = true -- prevent gangs from attacking you.
 
+Config.RagdollWhenShot = true -- enables player ragdoll (fall into ground) when shot.
+
+Config.KeepEngineOn = true -- keep engine on if player dont turn it off when exiting vehicle.
+
 Config.NoHeadshots = true -- prevents 1 shot headshot kill players.
 
 Config.Populate = true -- Spawn NPCS and cars near players to prevent a ghost city. Only works when Config.PedDensity and Config.Traffic.Density > 0.0
 
-Config.NoRandomNPCCops = true -- prevent NPC Police peds and car from spawning. Also prevents distant sirens sound from playing.
+Config.NoRandomDispatch = true -- prevent NPC Police, ambulance, Firefighters and so from spawning. Also prevents distant sirens sound from playing.
+
+Config.FlashlightOnWhenMoving = true -- allow the gun flashlights to stay on while moving. They normally are on only while aiming
+
+Config.DisableVehicleRewards = true -- Prevent getting items when riding a vehicle. For example, getting new gun when entering a police car.
 
 Config.Trains = true -- Freight Train and metro travelling around the city.
 
@@ -18,8 +26,6 @@ Config.NoPlaneTurbulence = true -- prevents plane turbulences while flying.
 Config.SameHealthForMaleAndFemalesPeds = true -- sets both male and female health to 200 (100 in game).
 
 Config.NoAutoHealthRegen = true -- disable auto health regen
-
-Config.HideWeaponStats = true -- disable weapon stats in weapon wheel.
 
 Config.ShowPlayerID = true -- Shows player ID on screen.
 Config.PlayerID = { -- only works when "Config.ShowPlayerId = true"
