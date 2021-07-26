@@ -36,12 +36,14 @@ end
 AddEventHandler("playerSpawned", function()
     Citizen.Wait(3000)
     onStartup()
+    if Config.Populate then
     PopulateNow()
+    end
 end)
 
 Citizen.CreateThread(function()
     while true do 
-        Citizen.Wait(1)
+        Citizen.Wait(0)
         if Config.NoAutoHealthRegen then
             SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0) -- disable auto health regen
         end
@@ -59,7 +61,41 @@ Citizen.CreateThread(function()
             end
         end
 
+<<<<<<< Updated upstream
         if Config.HideWeaponStats then
+=======
+        if Config.DisableVehicleRewards then
+            local id = PlayerId()
+            
+            DisablePlayerVehicleRewards(id)
+            
+            RemoveAllPickupsOfType('PICKUP_WEAPON_CARBINERIFLE')
+            RemoveAllPickupsOfType('PICKUP_WEAPON_PISTOL')
+            RemoveAllPickupsOfType('PICKUP_WEAPON_PUMPSHOTGUN')
+            RemoveAllPickupsOfType('PICKUP_WEAPON_COMBATPDW')
+            RemoveAllPickupsOfType('PICKUP_WEAPON_COMBATPISTOL')
+        end
+
+        if Config.KeepEngineOn then
+            local playerPed = GetPlayerPed(-1)
+            local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+            local isRunning = GetIsVehicleEngineRunning(vehicle)
+            if IsPedInAnyVehicle(playerPed, false) and IsControlPressed(2, 75) and not IsEntityDead(playerPed) and isRunning == true then
+                    SetVehicleEngineOn(vehicle, true, true, false)
+                    TaskLeaveVehicle(playerPed, vehicle, 0)
+            end
+        end
+        
+
+        SetPedDensityMultiplierThisFrame(Config.PedFrequency)
+        SetScenarioPedDensityMultiplierThisFrame(Config.PedFrequency, Config.PedFrequency)
+        -------------------------------
+        SetRandomVehicleDensityMultiplierThisFrame(Config.TrafficFrequency)
+        SetParkedVehicleDensityMultiplierThisFrame(Config.TrafficFrequency)
+        SetVehicleDensityMultiplierThisFrame(Config.TrafficFrequency)
+
+        if Config.HideHUD.WeaponStats then
+>>>>>>> Stashed changes
             HideHudComponentThisFrame(20)
         end
      end
@@ -73,6 +109,7 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
 
 Citizen.CreateThread(function()
     if Config.NoPlaneTurbulence then
