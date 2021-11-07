@@ -3,6 +3,8 @@ Config = {}
 Config.PedFrequency = 1.0     -- Alters the ped and traffic frequency. Values MUST be between 1.0 and 0.0 (1.0 > x > 0.0)
 Config.TrafficFrequency = 1.0 -- For example: 0.4 is valid but 1.6 or 5.0 is NOT valid. -- Leave both to 0.0 to disable all NPC.
 
+Config.Ambient = false -- set to "true" to disable Ambient Sounds 
+
 Config.NoGangsAttack = true -- prevent gangs from attacking you.
 
 Config.RagdollWhenShot = true -- enables player ragdoll (fall into ground) when shot.
