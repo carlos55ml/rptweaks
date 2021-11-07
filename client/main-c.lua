@@ -11,6 +11,11 @@ function onStartup()
 
     SetFlashLightKeepOnWhileMoving(Config.FlashlightOnWhenMoving)
 
+    if Config.Ambient then
+        Citizen.CreateThread(function()
+            StartAudioScene("CHARACTER_CHANGE_IN_SKY_SCENE")
+        end)	
+    end
 
     if Config.NoGangsAttack then
         -- no agresive gangs
